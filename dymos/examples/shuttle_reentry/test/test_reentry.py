@@ -30,6 +30,7 @@ class TestReentry(unittest.TestCase):
             p.driver.opt_settings['nlp_scaling_method'] = 'gradient-based'
             p.driver.opt_settings['tol'] = 1.0E-7
             p.driver.opt_settings['mu_strategy'] = 'monotone'
+            print('check')
 
         traj = p.model.add_subsystem('traj', Trajectory())
         phase0 = traj.add_phase('phase0',
