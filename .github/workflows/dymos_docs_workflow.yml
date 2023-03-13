@@ -30,7 +30,7 @@ jobs:
             NUMPY: 1.22
             SCIPY: 1.7
             PETSc: 3.17
-            PYOPTSPARSE: 'v2.8.3'
+            PYOPTSPARSE: 'v2.9.3'
             OPENMDAO: 'latest'
             OPTIONAL: '[docs]'
             JAX: '0.3.24'
@@ -72,7 +72,7 @@ jobs:
           echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
 
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Fetch tags
         run: |
@@ -186,15 +186,6 @@ jobs:
           else
             pip install openmdao==${{ matrix.OPENMDAO }}
           fi
-
-      - name: Install juptyter-book and jupyter
-        shell: bash -l {0}
-        run: |
-          echo "============================================================="
-          echo "Install jupyter-book"
-          echo "============================================================="
-          pip install git+https://github.com/executablebooks/jupyter-book
-
 
       - name: Install bokeh
         shell: bash -l {0}
